@@ -30,7 +30,7 @@ public class PatientController {
         return patientService.createPatient(newPatient);
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
     public Patient updatePatient(@PathVariable long id, @RequestBody Patient updatedPatient) {
         return patientService.updatePatient(id, updatedPatient);
     }

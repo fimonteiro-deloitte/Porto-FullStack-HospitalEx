@@ -48,4 +48,9 @@ public class DoctorController {
     public Specialty[] getSpecialties() {
         return Specialty.values();
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteDoctor(@PathVariable Long id) {
+        doctorService.deleteDoctor(id);
+    }
 }
