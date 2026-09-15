@@ -4,12 +4,15 @@ import dtt.formacao.java.consultas.model.refs.DocumentType;
 import dtt.formacao.java.consultas.model.refs.Gender;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 import java.util.Date;
 
 @Entity
 public class Doctor extends Person {
 
+    @Enumerated(EnumType.STRING)
     private Specialty specialty;
 
     public Doctor() {

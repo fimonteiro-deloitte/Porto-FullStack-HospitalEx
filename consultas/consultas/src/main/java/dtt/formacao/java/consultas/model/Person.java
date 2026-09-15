@@ -10,7 +10,7 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private LocalDateTime createdAt;
@@ -22,7 +22,11 @@ public abstract class Person {
     private String address;
     private String phoneNumber;
     private Integer fiscalNumber;
+
+    @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    @Enumerated(EnumType.STRING)
     private DocumentType documentType;
 
     @PrePersist
