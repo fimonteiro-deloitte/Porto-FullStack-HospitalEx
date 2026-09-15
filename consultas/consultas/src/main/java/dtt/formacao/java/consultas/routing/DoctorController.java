@@ -1,4 +1,51 @@
 package dtt.formacao.java.consultas.routing;
 
+import dtt.formacao.java.consultas.model.Doctor;
+import dtt.formacao.java.consultas.service.DoctorService;
+import dtt.formacao.java.consultas.utils.Specialty;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/doctors")
 public class DoctorController {
+
+    private final DoctorService doctorService;
+
+    public DoctorController(DoctorService doctorService) {
+        this.doctorService = doctorService;
+    }
+
+    @PostMapping
+    public Doctor createDoctor(@RequestBody Doctor doctor) {
+        return doctorService.createDoctor(doctor);
+    }
+
+    @PutMapping("/{id}")
+    public Doctor updateDoctor(@PathVariable Long id,
+                               @RequestBody Doctor doctor) {
+        return doctorService.updateDoctor(id, doctor);
+    }
+
+    @GetMapping
+    public List<Doctor> getAllDoctors() {
+        return doctorService.getAllDoctors();
+    }
+
+    @GetMapping("/{id}")
+    public Doctor getDoctorById(@PathVariable Long id) {
+        return doctorService.getDoctorById(id);
+    }
+
+    @GetMapping("/specialty/{specialty}")
+    public List<Doctor> getDoctorsBySpecialty(
+            @PathVariable Specialty specialty) {
+        return doctorService.getDoctorsBySpecialty(specialty);
+    }
+
+    @GetMapping("/specialties")
+    public Specialty[] getSpecialties() {
+        return Specialty.values();
+    }
 }
