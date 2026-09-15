@@ -4,10 +4,20 @@ package dtt.formacao.java.consultas.model;
 import dtt.formacao.java.consultas.model.refs.DocumentType;
 import dtt.formacao.java.consultas.model.refs.Gender;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 import java.util.Date;
 
 @Entity
+@Table(
+        name = "patient",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        columnNames = {"document_type", "fiscal_number"}
+                )
+        }
+)
 public class Patient extends Person {
 
     private Integer socialSecurityNumber;

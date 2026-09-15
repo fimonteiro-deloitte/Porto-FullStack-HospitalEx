@@ -3,13 +3,19 @@ package dtt.formacao.java.consultas.model;
 import dtt.formacao.java.consultas.model.refs.DocumentType;
 import dtt.formacao.java.consultas.model.refs.Gender;
 import dtt.formacao.java.consultas.model.refs.Specialty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
+@Table(
+        name = "doctor",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        columnNames = {"document_type", "fiscal_number"}
+                )
+        }
+)
 public class Doctor extends Person {
 
     @Enumerated(EnumType.STRING)
