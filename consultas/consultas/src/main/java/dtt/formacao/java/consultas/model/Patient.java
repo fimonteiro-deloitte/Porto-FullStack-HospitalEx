@@ -17,7 +17,7 @@ public class Patient extends Person {
     public Patient(Long id,
                    String name,
                    String email,
-                   Date brithDate,
+                   Date birthDate,
                    String address,
                    String phoneNumber,
                    Integer fiscalNumber,
@@ -26,7 +26,7 @@ public class Patient extends Person {
                    Integer socialSecurityNumeber,
                    Integer insuranceNumber) {
 
-        super(id, name, email, brithDate, address, phoneNumber,
+        super(id, name, email, birthDate, address, phoneNumber,
                 fiscalNumber, gender, documentType);
 
         this.socialSecurityNumeber = socialSecurityNumeber;

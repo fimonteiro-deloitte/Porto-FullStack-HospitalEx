@@ -17,7 +17,7 @@ public class Doctor extends Person {
     public Doctor(Long id,
                   String name,
                   String email,
-                  Date brithDate,
+                  Date birthDate,
                   String address,
                   String phoneNumber,
                   Integer fiscalNumber,
@@ -25,7 +25,7 @@ public class Doctor extends Person {
                   DocumentType documentType,
                   Specialty specialty) {
 
-        super(id, name, email, brithDate, address, phoneNumber,
+        super(id, name, email, birthDate, address, phoneNumber,
                 fiscalNumber, gender, documentType);
 
         this.specialty = specialty;

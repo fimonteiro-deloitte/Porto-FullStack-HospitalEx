@@ -10,7 +10,7 @@ public abstract class Person {
     private Long id;
     private String name;
     private String email;
-    private Date brithDate;
+    private Date birthDate;
     private String address;
     private String phoneNumber;
     private Integer fiscalNumber;
@@ -21,11 +21,11 @@ public abstract class Person {
 
     }
 
-    public Person(Long id, String name, String email, Date brithDate, String address, String phoneNumber, Integer fiscalNumber, Gender gender, DocumentType documentType) {
+    public Person(Long id, String name, String email, Date birthDate, String address, String phoneNumber, Integer fiscalNumber, Gender gender, DocumentType documentType) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.brithDate = brithDate;
+        this.birthDate = birthDate;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.fiscalNumber = fiscalNumber;
@@ -57,12 +57,12 @@ public abstract class Person {
         this.email = email;
     }
 
-    public Date getBrithDate() {
-        return brithDate;
+    public Date getbirthDate() {
+        return birthDate;
     }
 
-    public void setBrithDate(Date brithDate) {
-        this.brithDate = brithDate;
+    public void setbirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getAddress() {
