@@ -1,4 +1,10 @@
 package dtt.formacao.java.consultas.repository;
 
-public interface DoctorRepository {
+import dtt.formacao.java.consultas.model.Doctor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface DoctorRepository extends JpaRepository<Doctor, Long> {
+
 }

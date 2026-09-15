@@ -17,6 +17,10 @@ public abstract class Person {
     private Gender gender;
     private DocumentType documentType;
 
+    public Person(){
+
+    }
+
     public Person(Long id, String name, String email, Date brithDate, String address, String phoneNumber, Integer fiscalNumber, Gender gender, DocumentType documentType) {
         this.id = id;
         this.name = name;
