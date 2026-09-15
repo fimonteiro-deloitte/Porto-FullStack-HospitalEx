@@ -2,12 +2,14 @@ package dtt.formacao.java.consultas.model;
 
 import dtt.formacao.java.consultas.utils.DocumentType;
 import dtt.formacao.java.consultas.utils.Gender;
+import jakarta.persistence.Entity;
 
 import java.util.Date;
 
+@Entity
 public class Patient extends Person {
 
-    private Integer socialSecurityNumeber;
+    private Integer socialSecurityNumber;
     private Integer insuranceNumber;
 
     public Patient() {
@@ -23,22 +25,22 @@ public class Patient extends Person {
                    Integer fiscalNumber,
                    Gender gender,
                    DocumentType documentType,
-                   Integer socialSecurityNumeber,
+                   Integer socialSecurityNumber,
                    Integer insuranceNumber) {
 
         super(id, name, email, birthDate, address, phoneNumber,
                 fiscalNumber, gender, documentType);
 
-        this.socialSecurityNumeber = socialSecurityNumeber;
+        this.socialSecurityNumber = socialSecurityNumber;
         this.insuranceNumber = insuranceNumber;
     }
 
-    public Integer getSocialSecurityNumeber() {
-        return socialSecurityNumeber;
+    public Integer getSocialSecurityNumber() {
+        return socialSecurityNumber;
     }
 
-    public void setSocialSecurityNumeber(Integer socialSecurityNumeber) {
-        this.socialSecurityNumeber = socialSecurityNumeber;
+    public void setSocialSecurityNumber(Integer socialSecurityNumber) {
+        this.socialSecurityNumber = socialSecurityNumber;
     }
 
     public Integer getInsuranceNumber() {
