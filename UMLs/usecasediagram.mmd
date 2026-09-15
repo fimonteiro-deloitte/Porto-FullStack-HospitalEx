@@ -4,14 +4,16 @@ people <|-- doctor
 people <|-- patient
 
 class people {
+  <<abstract>>
   + id: id
   + name: String
   + phoneNumber: String
   + birthDate: Date
   + createdAt: Date
   + updatedAt: Date
-  + gender: String
-  + identification: identification
+  + docNumber: String
+  + fiscalNumber: int
+  + socialSecurityNumber: int
 }
 
 class doctor {
@@ -24,19 +26,18 @@ class patient {
 
 class appointment {
   + id: id
-  + date: Date
-  + time: Time
-  + createdAt: Date
-  + updatedAt: Date
+  + startDate: DateTime
+  + endDate: DateTime
+  + createdAt: DateTime
+  + updatedAt: DateTime 
   + type: String
 }
 
 class specialty {
-  + id: id
-  + name: String
-  + description: String
-  + createdAt: Date
-  + updatedAt: Date
+    <<enumeration>>
+    Neurology
+    Cardiology
+    ...
 }
 
  class idtype {
@@ -45,13 +46,13 @@ class specialty {
     Citizen ID            
   }
 
-class identification {
-  + id: id
-  + type: idtype
-  + number: String
-  + createdAt: Date
-  + updatedAt: Date
-}
+   class gender {
+    <<enumeration>>         
+    Male
+    Female
+    Other       
+  }
+
 
 doctor "*" -- "*" specialty 
 appointment "*" -- "1" specialty
@@ -60,5 +61,5 @@ appointment "*" -- "1" specialty
 appointment "*" -- "1" doctor
 appointment "*" -- "1" patient
 
-people "1" -- "1" identification
-identification --> idtype
+people --> idtype
+people --> gender
