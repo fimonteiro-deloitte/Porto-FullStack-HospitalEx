@@ -40,7 +40,7 @@ class specialty {
     ...
 }
 
- class idtype {
+ class documenttype {
     <<enumeration>>         
     Passport         
     Citizen ID            
@@ -61,5 +61,5 @@ appointment "*" -- "1" specialty
 appointment "*" -- "1" doctor
 appointment "*" -- "1" patient
 
-people --> idtype
+people --> documenttype
 people --> gender
