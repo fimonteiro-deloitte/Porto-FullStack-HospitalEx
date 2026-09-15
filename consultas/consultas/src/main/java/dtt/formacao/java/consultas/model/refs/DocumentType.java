@@ -1,4 +1,4 @@
-package dtt.formacao.java.consultas.utils;
+package dtt.formacao.java.consultas.model.refs;
 
 public enum DocumentType {
     PASSPORT,

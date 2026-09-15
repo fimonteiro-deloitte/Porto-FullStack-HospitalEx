@@ -1,13 +1,21 @@
 package dtt.formacao.java.consultas.model;
 
-import dtt.formacao.java.consultas.utils.DocumentType;
-import dtt.formacao.java.consultas.utils.Gender;
+import dtt.formacao.java.consultas.model.refs.DocumentType;
+import dtt.formacao.java.consultas.model.refs.Gender;
+import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
+@MappedSuperclass
 public abstract class Person {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
     private String name;
     private String email;
     private Date brithDate;
@@ -16,6 +24,17 @@ public abstract class Person {
     private Integer fiscalNumber;
     private Gender gender;
     private DocumentType documentType;
+
+    @PrePersist
+    protected void onCreate(){
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate(){
+        updatedAt = LocalDateTime.now();
+    }
 
     public Person(){
 

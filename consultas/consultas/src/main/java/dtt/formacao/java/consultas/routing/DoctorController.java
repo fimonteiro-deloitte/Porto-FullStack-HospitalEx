@@ -2,13 +2,13 @@ package dtt.formacao.java.consultas.routing;
 
 import dtt.formacao.java.consultas.model.Doctor;
 import dtt.formacao.java.consultas.service.DoctorService;
-import dtt.formacao.java.consultas.utils.Specialty;
+import dtt.formacao.java.consultas.model.refs.Specialty;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/doctors")
+@RequestMapping("/doctors")
 public class DoctorController {
 
     private final DoctorService doctorService;

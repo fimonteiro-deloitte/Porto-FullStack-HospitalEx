@@ -1,7 +1,7 @@
 package dtt.formacao.java.consultas.model;
 
-import dtt.formacao.java.consultas.utils.DocumentType;
-import dtt.formacao.java.consultas.utils.Gender;
+import dtt.formacao.java.consultas.model.refs.DocumentType;
+import dtt.formacao.java.consultas.model.refs.Gender;
 
 import java.util.Date;
 
