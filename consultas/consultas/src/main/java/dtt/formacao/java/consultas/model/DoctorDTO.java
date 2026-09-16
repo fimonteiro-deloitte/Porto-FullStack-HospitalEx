@@ -5,6 +5,7 @@ import dtt.formacao.java.consultas.model.refs.Gender;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 
 import java.util.Date;
+import java.util.List;
 
 public record DoctorDTO(
         Long id,
@@ -16,6 +17,6 @@ public record DoctorDTO(
         Integer fiscalNumber,
         Gender gender,
         DocumentType documentType,
-        Specialty specialty
+        List<Specialty> specialties
 ) {
 }

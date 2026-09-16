@@ -79,7 +79,8 @@ public class DoctorService {
     }
 
     public List<DoctorDTO> getDoctorsBySpecialty(Specialty specialty) {
-        return doctorRepository.findBySpecialty(specialty)
+        return doctorRepository
+                .findBySpecialtiesContains(specialty)
                 .stream()
                 .map(DoctorMapper::toDTO)
                 .toList();

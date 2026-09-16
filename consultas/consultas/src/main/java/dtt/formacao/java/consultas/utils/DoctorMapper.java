@@ -43,7 +43,7 @@ public class DoctorMapper {
                 dto.fiscalNumber(),
                 dto.gender(),
                 dto.documentType(),
-                dto.specialty()
+                dto.specialties()
         );
     }
 }
