@@ -1,6 +1,7 @@
 package dtt.formacao.java.consultas.routing;
 
 import dtt.formacao.java.consultas.model.Doctor;
+import dtt.formacao.java.consultas.model.DoctorDTO;
 import dtt.formacao.java.consultas.service.DoctorService;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 import org.springframework.web.bind.annotation.*;
@@ -18,28 +19,28 @@ public class DoctorController {
     }
 
     @PostMapping
-    public Doctor createDoctor(@RequestBody Doctor doctor) {
-        return doctorService.createDoctor(doctor);
+    public DoctorDTO createDoctor(@RequestBody DoctorDTO dto) {
+        return doctorService.createDoctor(dto);
     }
 
     @PutMapping("/{id}")
-    public Doctor updateDoctor(@PathVariable Long id,
-                               @RequestBody Doctor doctor) {
+    public DoctorDTO updateDoctor(@PathVariable Long id,
+                               @RequestBody DoctorDTO doctor) {
         return doctorService.updateDoctor(id, doctor);
     }
 
     @GetMapping
-    public List<Doctor> getAllDoctors() {
+    public List<DoctorDTO> getAllDoctors() {
         return doctorService.getAllDoctors();
     }
 
     @GetMapping("/{id}")
-    public Doctor getDoctorById(@PathVariable Long id) {
+    public DoctorDTO getDoctorById(@PathVariable Long id) {
         return doctorService.getDoctorById(id);
     }
 
     @GetMapping("/specialty/{specialty}")
-    public List<Doctor> getDoctorsBySpecialty(
+    public List<DoctorDTO> getDoctorsBySpecialty(
             @PathVariable Specialty specialty) {
         return doctorService.getDoctorsBySpecialty(specialty);
     }
