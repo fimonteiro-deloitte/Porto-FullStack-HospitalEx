@@ -4,14 +4,14 @@ import dtt.formacao.java.consultas.model.refs.DocumentType;
 import dtt.formacao.java.consultas.model.refs.Gender;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class DoctorDTO {
 
     private Long id;
     private String name;
     private String email;
-    private Date birthDate;
+    private LocalDate birthDate;
     private String address;
     private String phoneNumber;
     private Integer fiscalNumber;
@@ -25,7 +25,7 @@ public class DoctorDTO {
     public DoctorDTO(Long id,
                      String name,
                      String email,
-                     Date birthDate,
+                     LocalDate birthDate,
                      String address,
                      String phoneNumber,
                      Integer fiscalNumber,
@@ -68,11 +68,11 @@ public class DoctorDTO {
         this.email = email;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

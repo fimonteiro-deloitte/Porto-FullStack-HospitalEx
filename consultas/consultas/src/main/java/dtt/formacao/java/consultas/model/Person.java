@@ -4,8 +4,8 @@ import dtt.formacao.java.consultas.model.refs.DocumentType;
 import dtt.formacao.java.consultas.model.refs.Gender;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @MappedSuperclass
 public abstract class Person {
@@ -18,7 +18,7 @@ public abstract class Person {
 
     private String name;
     private String email;
-    private Date birthDate;
+    private LocalDate birthDate;
     private String address;
     private String phoneNumber;
     private Integer fiscalNumber;
@@ -44,7 +44,7 @@ public abstract class Person {
 
     }
 
-    public Person(Long id, String name, String email, Date birthDate, String address, String phoneNumber, Integer fiscalNumber, Gender gender, DocumentType documentType) {
+    public Person(Long id, String name, String email, LocalDate birthDate, String address, String phoneNumber, Integer fiscalNumber, Gender gender, DocumentType documentType) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -80,11 +80,11 @@ public abstract class Person {
         this.email = email;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setbirthDate(Date birthDate) {
+    public void setbirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

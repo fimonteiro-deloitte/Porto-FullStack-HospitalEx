@@ -5,7 +5,7 @@ import dtt.formacao.java.consultas.model.refs.Gender;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(
@@ -28,7 +28,7 @@ public class Doctor extends Person {
     public Doctor(Long id,
                   String name,
                   String email,
-                  Date birthDate,
+                  LocalDate birthDate,
                   String address,
                   String phoneNumber,
                   Integer fiscalNumber,
