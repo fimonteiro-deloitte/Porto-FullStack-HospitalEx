@@ -1,12 +1,13 @@
 package dtt.formacao.java.consultas.service;
 
 import dtt.formacao.java.consultas.model.Patient;
+import dtt.formacao.java.consultas.model.PatientDTO;
 import dtt.formacao.java.consultas.repository.PatientRepository;
+import dtt.formacao.java.consultas.utils.PatientMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 
 @Service
 public class PatientService {
@@ -17,29 +18,37 @@ public class PatientService {
         this.patientRepository = patientRepository;
     }
 
-    public List<Patient> getAllPatients() {
-        return patientRepository.findAll();
+    public List<PatientDTO> getAllPatients() {
+        return patientRepository
+            .findAll()
+            .stream()
+            .map(PatientMapper::toDTO)
+            .toList();
     }
 
-    public Patient getPatient(long id) {
+    public PatientDTO getPatient(long id) {
         Optional<Patient> patient = patientRepository.findById(id);
-        return patient.get();
+        return PatientMapper.toDTO(patient.get());
     }
 
-    public Patient createPatient(Patient newPatient) {
-        return (Patient) patientRepository.save(newPatient);
+    public PatientDTO createPatient(PatientDTO newPatient) {
+        Patient p = PatientMapper.toEntity(newPatient);
+        Patient saved = patientRepository.save(p);
+        return PatientMapper.toDTO(saved);
     }
 
-    public Patient updatePatient(long id, Patient p2) {
+    public PatientDTO updatePatient(long id, PatientDTO updatedDTO) {
+        Patient updatedPatient = PatientMapper.toEntity(updatedDTO);
 
         Optional<Patient> tempPatient = patientRepository.findById(id);
         Patient patient = tempPatient.get();
 
-        patient.setName(p2.getName());
-        patient.setEmail(p2.getEmail());
-        patient.setPhoneNumber(p2.getPhoneNumber());
+        patient.setName(updatedPatient.getName());
+        patient.setEmail(updatedPatient.getEmail());
+        patient.setPhoneNumber(updatedPatient.getPhoneNumber());
 
-        return (Patient) patientRepository.save(patient);
+        Patient saved = patientRepository.save(patient);
+        return PatientMapper.toDTO(saved);
     }
 
     public void deletePatient(long id) {

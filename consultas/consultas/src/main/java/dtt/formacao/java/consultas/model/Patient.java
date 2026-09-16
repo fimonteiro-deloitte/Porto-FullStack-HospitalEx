@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(
@@ -30,7 +30,7 @@ public class Patient extends Person {
     public Patient(Long id,
                    String name,
                    String email,
-                   Date birthDate,
+                   LocalDate birthDate,
                    String address,
                    String phoneNumber,
                    Integer fiscalNumber,
