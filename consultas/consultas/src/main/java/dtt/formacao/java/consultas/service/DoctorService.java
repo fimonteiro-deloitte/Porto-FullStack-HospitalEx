@@ -18,42 +18,12 @@ public class DoctorService {
         this.doctorRepository = doctorRepository;
     }
 
-    /*
-    public Doctor createDoctor(Doctor doctor) {
-        return doctorRepository.save(doctor);
-    }
-    */
 
     public DoctorDTO createDoctor(DoctorDTO dto) {
         Doctor doctor = DoctorMapper.toEntity(dto);
         Doctor savedDoctor = doctorRepository.save(doctor);
         return DoctorMapper.toDTO(savedDoctor);
     }
-
-    /*
-    public Doctor updateDoctor(Long id, Doctor doctor) {
-        doctor.setId(id);
-        return doctorRepository.save(doctor);
-    }
-
-    public List<Doctor> getAllDoctors() {
-        return doctorRepository.findAll();
-    }
-
-    public Doctor getDoctorById(Long id) {
-        return doctorRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Doctor not found"));
-    }
-
-    public List<Doctor> getDoctorsBySpecialty(Specialty specialty) {
-        return doctorRepository.findBySpecialty(specialty);
-    }
-
-    public void deleteDoctor(Long id) {
-        doctorRepository.deleteById(id);
-    }
-    */
 
     public DoctorDTO updateDoctor(Long id, DoctorDTO dto) {
         Doctor doctor = DoctorMapper.toEntity(dto);

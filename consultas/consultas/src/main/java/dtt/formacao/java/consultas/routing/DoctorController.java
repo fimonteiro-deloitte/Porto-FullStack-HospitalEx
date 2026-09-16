@@ -18,12 +18,6 @@ public class DoctorController {
         this.doctorService = doctorService;
     }
 
-    /*
-    @PostMapping
-    public Doctor createDoctor(@RequestBody Doctor doctor) {
-        return doctorService.createDoctor(doctor);
-    }
-*/
     @PostMapping
     public DoctorDTO createDoctor(@RequestBody DoctorDTO dto) {
         return doctorService.createDoctor(dto);
