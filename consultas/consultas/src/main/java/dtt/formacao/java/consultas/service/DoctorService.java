@@ -1,8 +1,10 @@
 package dtt.formacao.java.consultas.service;
 
 import dtt.formacao.java.consultas.model.Doctor;
+import dtt.formacao.java.consultas.model.DoctorDTO;
 import dtt.formacao.java.consultas.repository.DoctorRepository;
 import dtt.formacao.java.consultas.model.refs.Specialty;
+import dtt.formacao.java.consultas.utils.DoctorMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +18,16 @@ public class DoctorService {
         this.doctorRepository = doctorRepository;
     }
 
+    /*
     public Doctor createDoctor(Doctor doctor) {
         return doctorRepository.save(doctor);
+    }
+    */
+
+    public DoctorDTO createDoctor(DoctorDTO dto) {
+        Doctor doctor = DoctorMapper.toEntity(dto);
+        Doctor savedDoctor = doctorRepository.save(doctor);
+        return DoctorMapper.toDTO(savedDoctor);
     }
 
     public Doctor updateDoctor(Long id, Doctor doctor) {

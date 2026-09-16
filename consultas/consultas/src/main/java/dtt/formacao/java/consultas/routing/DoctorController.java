@@ -1,6 +1,7 @@
 package dtt.formacao.java.consultas.routing;
 
 import dtt.formacao.java.consultas.model.Doctor;
+import dtt.formacao.java.consultas.model.DoctorDTO;
 import dtt.formacao.java.consultas.service.DoctorService;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +18,15 @@ public class DoctorController {
         this.doctorService = doctorService;
     }
 
+    /*
     @PostMapping
     public Doctor createDoctor(@RequestBody Doctor doctor) {
         return doctorService.createDoctor(doctor);
+    }
+*/
+    @PostMapping
+    public DoctorDTO createDoctor(@RequestBody DoctorDTO dto) {
+        return doctorService.createDoctor(dto);
     }
 
     @PutMapping("/{id}")
