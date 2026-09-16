@@ -34,16 +34,16 @@ public class DoctorMapper {
         }
 
         return new Doctor(
-                dto.getId(),
-                dto.getName(),
-                dto.getEmail(),
-                dto.getBirthDate(),
-                dto.getAddress(),
-                dto.getPhoneNumber(),
-                dto.getFiscalNumber(),
-                dto.getGender(),
-                dto.getDocumentType(),
-                dto.getSpecialty()
+                dto.id(),
+                dto.name(),
+                dto.email(),
+                dto.birthDate(),
+                dto.address(),
+                dto.phoneNumber(),
+                dto.fiscalNumber(),
+                dto.gender(),
+                dto.documentType(),
+                dto.specialty()
         );
     }
 }

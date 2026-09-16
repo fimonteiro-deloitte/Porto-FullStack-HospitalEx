@@ -30,6 +30,7 @@ public class DoctorService {
         return DoctorMapper.toDTO(savedDoctor);
     }
 
+    /*
     public Doctor updateDoctor(Long id, Doctor doctor) {
         doctor.setId(id);
         return doctorRepository.save(doctor);
@@ -52,4 +53,40 @@ public class DoctorService {
     public void deleteDoctor(Long id) {
         doctorRepository.deleteById(id);
     }
+    */
+
+    public DoctorDTO updateDoctor(Long id, DoctorDTO dto) {
+        Doctor doctor = DoctorMapper.toEntity(dto);
+        doctor.setId(id);
+
+        Doctor updatedDoctor = doctorRepository.save(doctor);
+
+        return DoctorMapper.toDTO(updatedDoctor);
+    }
+
+    public List<DoctorDTO> getAllDoctors() {
+        return doctorRepository.findAll()
+                .stream()
+                .map(DoctorMapper::toDTO)
+                .toList();
+    }
+
+    public DoctorDTO getDoctorById(Long id) {
+        Doctor doctor = doctorRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Doctor not found"));
+
+        return DoctorMapper.toDTO(doctor);
+    }
+
+    public List<DoctorDTO> getDoctorsBySpecialty(Specialty specialty) {
+        return doctorRepository.findBySpecialty(specialty)
+                .stream()
+                .map(DoctorMapper::toDTO)
+                .toList();
+    }
+
+    public void deleteDoctor(Long id) {
+        doctorRepository.deleteById(id);
+    }
+    
 }

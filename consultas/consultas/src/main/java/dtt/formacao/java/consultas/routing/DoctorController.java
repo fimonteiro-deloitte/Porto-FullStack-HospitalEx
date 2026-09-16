@@ -30,23 +30,23 @@ public class DoctorController {
     }
 
     @PutMapping("/{id}")
-    public Doctor updateDoctor(@PathVariable Long id,
-                               @RequestBody Doctor doctor) {
+    public DoctorDTO updateDoctor(@PathVariable Long id,
+                               @RequestBody DoctorDTO doctor) {
         return doctorService.updateDoctor(id, doctor);
     }
 
     @GetMapping
-    public List<Doctor> getAllDoctors() {
+    public List<DoctorDTO> getAllDoctors() {
         return doctorService.getAllDoctors();
     }
 
     @GetMapping("/{id}")
-    public Doctor getDoctorById(@PathVariable Long id) {
+    public DoctorDTO getDoctorById(@PathVariable Long id) {
         return doctorService.getDoctorById(id);
     }
 
     @GetMapping("/specialty/{specialty}")
-    public List<Doctor> getDoctorsBySpecialty(
+    public List<DoctorDTO> getDoctorsBySpecialty(
             @PathVariable Specialty specialty) {
         return doctorService.getDoctorsBySpecialty(specialty);
     }
