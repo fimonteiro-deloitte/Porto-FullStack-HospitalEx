@@ -1,5 +1,7 @@
 package dtt.formacao.java.consultas.service;
 
+import dtt.formacao.java.consultas.exception.DoctorNotFoundException;
+import dtt.formacao.java.consultas.exception.InvalidDoctorDataException;
 import dtt.formacao.java.consultas.model.dao.Doctor;
 import dtt.formacao.java.consultas.model.dto.DoctorDTO;
 import dtt.formacao.java.consultas.repository.DoctorRepository;
@@ -57,6 +59,9 @@ public class DoctorService {
     }
 
     public void deleteDoctor(Long id) {
+        if (!doctorRepository.existsById(id)) {
+            throw DoctorNotFoundException.forId(id);
+        }
         doctorRepository.deleteById(id);
     }
     
