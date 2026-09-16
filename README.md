@@ -1,10 +1,5 @@
 # Porto FullStack Hospital Exercise
 
-## Checklist
-- [x] Gather project context from source files and infrastructure config
-- [x] Write a project-specific README in the repository root
-- [x] Include local run, Docker run, API docs, and project structure guidance
-
 ## Project Overview
 `Porto-FullStack-HospitalEx` is a Spring Boot REST API for managing hospital consultations domain data, focused on doctors and patients.
 
