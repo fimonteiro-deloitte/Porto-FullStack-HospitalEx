@@ -1,7 +1,7 @@
 package dtt.formacao.java.consultas.service;
 
-import dtt.formacao.java.consultas.model.Doctor;
-import dtt.formacao.java.consultas.model.DoctorDTO;
+import dtt.formacao.java.consultas.model.dao.Doctor;
+import dtt.formacao.java.consultas.model.dto.DoctorDTO;
 import dtt.formacao.java.consultas.repository.DoctorRepository;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 import dtt.formacao.java.consultas.utils.DoctorMapper;

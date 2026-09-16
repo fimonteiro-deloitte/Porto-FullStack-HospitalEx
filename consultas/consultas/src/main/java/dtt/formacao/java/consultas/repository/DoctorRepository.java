@@ -1,6 +1,6 @@
 package dtt.formacao.java.consultas.repository;
 
-import dtt.formacao.java.consultas.model.Doctor;
+import dtt.formacao.java.consultas.model.dao.Doctor;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -1,6 +1,6 @@
 package dtt.formacao.java.consultas.routing;
 
-import dtt.formacao.java.consultas.model.DoctorDTO;
+import dtt.formacao.java.consultas.model.dto.DoctorDTO;
 import dtt.formacao.java.consultas.service.DoctorService;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 import org.slf4j.Logger;

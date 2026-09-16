@@ -1,6 +1,6 @@
 package dtt.formacao.java.consultas.routing;
 
-import dtt.formacao.java.consultas.model.PatientDTO;
+import dtt.formacao.java.consultas.model.dto.PatientDTO;
 import dtt.formacao.java.consultas.service.PatientService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
