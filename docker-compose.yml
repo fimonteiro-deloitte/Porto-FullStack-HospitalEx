@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   postgres:
-    image: postgres:17
+    image: docker.io/library/postgres:17
     container_name: consultas-postgres
 
     environment:
@@ -18,15 +18,15 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   app:
-    build: .
+    build:
+      context: ./consultas/consultas
+      dockerfile: ../../Dockerfile
+    image: porto-fullstack-exercice_app
     container_name: consultas-app
-
     ports:
       - "8080:8080"
-
     depends_on:
       - postgres
-
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/consultas
       SPRING_DATASOURCE_USERNAME: postgres
