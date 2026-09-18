@@ -1,7 +1,7 @@
 package dtt.formacao.java.consultas.utils;
 
-import dtt.formacao.java.consultas.model.Patient;
-import dtt.formacao.java.consultas.model.PatientDTO;
+import dtt.formacao.java.consultas.model.dao.Patient;
+import dtt.formacao.java.consultas.model.dto.PatientDTO;
 
 public class PatientMapper {
 

@@ -1,7 +1,7 @@
 package dtt.formacao.java.consultas.service;
 
-import dtt.formacao.java.consultas.model.Patient;
-import dtt.formacao.java.consultas.model.PatientDTO;
+import dtt.formacao.java.consultas.model.dao.Patient;
+import dtt.formacao.java.consultas.model.dto.PatientDTO;
 import dtt.formacao.java.consultas.repository.PatientRepository;
 import dtt.formacao.java.consultas.utils.PatientMapper;
 import org.springframework.stereotype.Service;

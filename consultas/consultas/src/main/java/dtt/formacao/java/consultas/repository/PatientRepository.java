@@ -1,6 +1,6 @@
 package dtt.formacao.java.consultas.repository;
 
-import dtt.formacao.java.consultas.model.Patient;
+import dtt.formacao.java.consultas.model.dao.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,7 @@
 package dtt.formacao.java.consultas.routing;
 
-import dtt.formacao.java.consultas.model.DoctorDTO;
+import dtt.formacao.java.consultas.exception.DoctorNotFoundException;
+import dtt.formacao.java.consultas.model.dto.DoctorDTO;
 import dtt.formacao.java.consultas.service.DoctorService;
 import dtt.formacao.java.consultas.model.refs.Specialty;
 import org.slf4j.Logger;
@@ -86,6 +87,9 @@ public class DoctorController {
     public void deleteDoctor(@PathVariable Long id) {
         try {
             doctorService.deleteDoctor(id);
+        } catch (DoctorNotFoundException ex) {
+            logger.warn("Doctor not found for deletion with id {}", id);
+            throw ex;
         } catch (RuntimeException ex) {
             logger.error("Error deleting doctor with id {}", id, ex);
             throw ex;
