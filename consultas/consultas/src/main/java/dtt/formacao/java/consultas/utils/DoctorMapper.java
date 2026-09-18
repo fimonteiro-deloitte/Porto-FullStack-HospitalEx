@@ -24,7 +24,7 @@ public class DoctorMapper {
                 doctor.getFiscalNumber(),
                 doctor.getGender(),
                 doctor.getDocumentType(),
-                doctor.getSpecialty()
+                doctor.getSpecialties()
         );
     }
 

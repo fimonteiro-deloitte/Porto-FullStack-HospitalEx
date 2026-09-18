@@ -82,9 +82,16 @@ docker compose up --build
 From `consultas/consultas`:
 
 ```powershell
-.\gradlew.bat clean build
-.\gradlew.bat test
+./gradlew clean build -x test
+./gradlew.bat test
 ```
+## Database Configuration
+The application can be configured to use either H2 (default) or PostgreSQL. The configuration is managed through the `application.properties` file and environment variables.
+
+```powershell
+psql -U postgres -d consultas
+```
+
 
 ## Notes
 - The project currently uses `create-drop` for JPA schema lifecycle in local config.

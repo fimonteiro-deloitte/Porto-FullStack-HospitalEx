@@ -6,6 +6,7 @@ import dtt.formacao.java.consultas.model.refs.Specialty;
 
 import java.util.List;
 import java.time.LocalDate;
+import java.util.Set;
 
 
 public record DoctorDTO(
@@ -18,6 +19,6 @@ public record DoctorDTO(
         Integer fiscalNumber,
         Gender gender,
         DocumentType documentType,
-        List<Specialty> specialties
+        Set<Specialty> specialties
 ) {
 }
