@@ -1,0 +1,59 @@
+@startuml
+
+abstract class Person {
+  - id
+  - name
+  - gender
+  - birthdate
+  - documentType
+  - documentNumber
+  - fiscalNumber
+  - phoneNumber
+  - address
+}
+
+class Doctor {
+  - specialities
+}
+
+class Patient {
+  - socialSecurityNumber
+  - insuranceNumber
+}
+
+class Appointment {
+  - id
+  - startDate
+  - endDate
+}
+
+enum Speciality {
+  Dermatology
+  Pediatrics
+  Neurology
+  ...
+}
+
+enum Gender {
+  Male
+  Female
+  Other
+}
+
+enum DocumentType {
+  CitizenCard
+  Passport
+}
+
+Doctor --|> Person
+Patient --|> Person
+
+Appointment "0..*" -- "1" Patient
+Appointment "0..*" -- "1" Doctor
+
+Doctor --> Speciality
+
+Person --> Gender
+Person --> DocumentType
+
+@enduml

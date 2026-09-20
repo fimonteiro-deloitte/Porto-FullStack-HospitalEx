@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_DB: healthdb
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypass
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  edu-be-java:
+    build:
+      context: .
+      dockerfile: ./infrastructure/Dockerfile
+    container_name: edu-be-java
+    ports:
+      - 9090:9090
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/healthdb
+      DATABASE_USERNAME: myuser
+      DATABASE_PASSWORD: mypass
+      depends_on:
+        - postgres
+    networks:
+      - backend
+
+volumes:
+  pgdata:
+
+networks:
+  backend:
