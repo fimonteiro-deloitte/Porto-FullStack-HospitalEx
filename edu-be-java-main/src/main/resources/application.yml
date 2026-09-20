@@ -1,0 +1,29 @@
+server:
+  port: 9090
+
+spring:
+  # Uncomment the following lines to enable H2 database
+  #h2:
+  #  console:
+  #    enabled: true
+  #    path: /h2-console
+  #    settings:
+  #      web-allow-others: true
+
+  #datasource:
+  #  url: jdbc:h2:mem:healthdb
+  #  username: myuser
+  #  password: mypass
+  #  driver-class-name: org.h2.Driver
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/healthdb
+    username: myuser
+    password: mypass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+

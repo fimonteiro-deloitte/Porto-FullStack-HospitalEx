@@ -1,0 +1,398 @@
+{
+  "name": "edu-be",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "doctors",
+      "filename": "doctors",
+      "seq": 1,
+      "root": {
+        "meta": {
+          "name": "doctors",
+          "seq": 1
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Create doctor",
+          "filename": "Create doctor.bru",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:9090/doctors",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Armando Silva\",\n  \"gender\": \"MALE\",\n  \"birthdate\": \"1980-04-14\",\n  \"documentType\": \"CITIZEN_CARD\",\n  \"documentNumber\": \"13615510\",\n  \"fiscalNumber\": 252945644,\n  \"phoneNumber\": 916338296,\n  \"address\": \"Rua da Esquina\",\n  \"specialities\": [\n    \"FAMILY_MEDICINE\"\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Delete doctor",
+          "filename": "Delete doctor.bru",
+          "seq": 6,
+          "request": {
+            "url": "http://localhost:9090/doctors/4",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Get doctor by id",
+          "filename": "Get doctor by id.bru",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:9090/doctors/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Get doctor by speciality",
+          "filename": "Get doctor by speciality.bru",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:9090/doctors/speciality/FAMILY_MEDICINE",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Get doctors",
+          "filename": "Get doctors.bru",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:9090/doctors",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Update doctor",
+          "filename": "Update doctor.bru",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:9090/doctors/4",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Armando Silva\",\n  \"gender\": \"MALE\",\n  \"birthdate\": \"1980-04-14\",\n  \"documentType\": \"CITIZEN_CARD\",\n  \"documentNumber\": \"1361551\",\n  \"fiscalNumber\": 252945644,\n  \"phoneNumber\": 916338296,\n  \"address\": \"Rua da Esquina\",\n  \"specialities\": [\n    \"FAMILY_MEDICINE\",\n    \"DERMATOLOGY\"\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "patients",
+      "filename": "patients",
+      "seq": 2,
+      "root": {
+        "meta": {
+          "name": "patients",
+          "seq": 2
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Create patient",
+          "filename": "Create patient.bru",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:9090/patients",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Pedro Costa\",\n  \"gender\": \"MALE\",\n  \"birthdate\": \"1980-05-14\",\n  \"documentType\": \"CITIZEN_CARD\",\n  \"documentNumber\": \"136155187\",\n  \"fiscalNumber\": 252945638,\n  \"phoneNumber\": 916338292,\n  \"address\": \"Rua da Agonia\",\n  \"socialSecurityNumber\": 82537843203,\n  \"insuranceNumber\": \"SA4314819-C\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Delete patient",
+          "filename": "Delete patient.bru",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:9090/patients/11",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Get patient by id",
+          "filename": "Get patient by id.bru",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:9090/patients/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Get patients",
+          "filename": "Get patients.bru",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:9090/patients",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Update patient",
+          "filename": "Update patient.bru",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:9090/patients/11",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Pedro Costa\",\n  \"gender\": \"MALE\",\n  \"birthdate\": \"1980-05-14\",\n  \"documentType\": \"CITIZEN_CARD\",\n  \"documentNumber\": \"136155187\",\n  \"fiscalNumber\": 252945638,\n  \"phoneNumber\": 916338296,\n  \"address\": \"Rua da Agonia\",\n  \"socialSecurityNumber\": 82537843203,\n  \"insuranceNumber\": \"SA4314819-C\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "metadata",
+      "filename": "metadata",
+      "seq": 3,
+      "root": {
+        "meta": {
+          "name": "metadata",
+          "seq": 3
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Get metadata",
+          "filename": "Get metadata.bru",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:9090/metadata",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "environments": [],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "oauth2",
+        "oauth2": {
+          "grantType": "authorization_code",
+          "accessTokenUrl": "",
+          "username": "",
+          "password": "",
+          "clientId": "",
+          "clientSecret": "",
+          "scope": "",
+          "credentialsPlacement": "body",
+          "credentialsId": "credentials",
+          "tokenPlacement": "header",
+          "tokenHeaderPrefix": "Bearer",
+          "tokenQueryKey": "access_token"
+        }
+      }
+    },
+    "meta": {
+      "name": "java-health"
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "edu-be",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
