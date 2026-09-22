@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import pt.dlt.person.exception.DoctorCreationException;
 import pt.dlt.person.model.dto.DoctorRequest;
 import pt.dlt.person.model.dto.DoctorResponse;
-import pt.dlt.person.model.DoctorProjection;
 import pt.dlt.person.model.ref.Speciality;
 import pt.dlt.person.exception.NoDoctorFoundException;
 import pt.dlt.person.service.DoctorService;
@@ -90,10 +89,10 @@ public class DoctorController {
             description = "Retrieves all doctors with the given speciality",
             responses = {
                     @ApiResponse(responseCode = "200", description = "Doctors found",
-                            content = @Content(schema = @Schema(implementation = DoctorProjection.class)))
+                            content = @Content(schema = @Schema(implementation = DoctorResponse.class)))
             }
     )
-    public List<DoctorProjection> getDoctorsBySpecialty(@Parameter(description = "Doctor speciality", example = "DERMATOLOGY") @PathVariable Speciality speciality) {
+    public List<DoctorResponse> getDoctorsBySpecialty(@Parameter(description = "Doctor speciality", example = "DERMATOLOGY") @PathVariable Speciality speciality) {
         logger.info("Fetching doctors with speciality: " + speciality);
         return doctorService.getDoctorsBySpeciality(speciality);
     }

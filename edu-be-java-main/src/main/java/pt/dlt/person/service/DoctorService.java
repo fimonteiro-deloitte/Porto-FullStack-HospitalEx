@@ -6,7 +6,6 @@ import pt.dlt.person.exception.DoctorCreationException;
 import pt.dlt.person.model.dao.Doctor;
 import pt.dlt.person.model.dto.DoctorRequest;
 import pt.dlt.person.model.dto.DoctorResponse;
-import pt.dlt.person.model.DoctorProjection;
 import pt.dlt.person.model.ref.Speciality;
 import pt.dlt.person.exception.NoDoctorFoundException;
 import pt.dlt.person.repository.DoctorRepository;
@@ -50,8 +49,8 @@ public class DoctorService {
         return mapper.mapDoctor(response.get());
     }
 
-    public List<DoctorProjection> getDoctorsBySpeciality(Speciality speciality) {
-        return doctorRepository.findDoctorBySpeciality(speciality);
+    public List<DoctorResponse> getDoctorsBySpeciality(Speciality speciality) {
+        return mapper.mapDoctors(doctorRepository.findDoctorBySpeciality(speciality));
     }
 
     public DoctorResponse updateDoctor(long id, DoctorRequest doctorRequestDTO) throws NoDoctorFoundException {

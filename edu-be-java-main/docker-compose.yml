@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres
+    image: postgres:17
     container_name: postgres
     environment:
       POSTGRES_DB: healthdb
@@ -24,8 +24,8 @@ services:
       DATABASE_URL: jdbc:postgresql://postgres:5432/healthdb
       DATABASE_USERNAME: myuser
       DATABASE_PASSWORD: mypass
-      depends_on:
-        - postgres
+    depends_on:
+      - postgres
     networks:
       - backend
 
@@ -34,3 +34,4 @@ volumes:
 
 networks:
   backend:
+    name: edu-new-joiners
