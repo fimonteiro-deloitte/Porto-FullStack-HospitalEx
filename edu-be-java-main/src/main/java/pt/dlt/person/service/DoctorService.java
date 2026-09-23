@@ -60,6 +60,7 @@ public class DoctorService {
         }
         Doctor doctor = response.get();
         doctor.setName(doctorRequestDTO.name());
+        doctor.setBirthdate(doctorRequestDTO.birthdate());
         doctor.setPhoneNumber(doctorRequestDTO.phoneNumber());
         doctor.setGender(doctorRequestDTO.gender());
         doctor.setAddress(doctorRequestDTO.address());

@@ -53,6 +53,7 @@ public class PatientService {
         }
         Patient patient = response.get();
         patient.setName(patientRequestDTO.name());
+        patient.setBirthdate(patientRequestDTO.birthdate());
         patient.setPhoneNumber(patientRequestDTO.phoneNumber());
         patient.setGender(patientRequestDTO.gender());
         patient.setAddress(patientRequestDTO.address());
